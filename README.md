@@ -10,7 +10,7 @@ Audio service build with python and flask.
 #### Create and activate virtual environment:
 ```sh
     python -m venv [YOUR_ENV_NAME]
-    venv/Scripts/activate
+    [YOUR_ENV_NAME]/Scripts/activate
 ```
 
 #### Install requirements.txt file:
