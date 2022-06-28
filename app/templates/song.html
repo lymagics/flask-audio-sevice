@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}{{song.name}}{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>{{song.name}}</h1>
+    </div>
+    <h4>{{_("Published by")}} <a href="{{url_for('main.user', username=song.author.username)}}">
+        {{song.author.username}}
+        </a></h4>
+    {% if song.get_url() %}
+        <audio controls>
+            <source src="{{song.url}}">
+        </audio>
+    {% else %}
+    <div id="upload-alert" class="alert alert-info" role="alert">
+        <div class="content">
+            <div class="loader"></div> <div class="text"><p>{{_("Please wait. This song is uploading to the server.")}}</p></div> 
+        </div>
+      </div>
+    {% endif %}
+
+    {% if song.lyrics %}
+    <details>
+        <summary><h4>{{_("Click here for Lyrics")}}</h4></summary>
+        <pre>{{song.lyrics}}</pre>
+    </details>
+
+    {% endif %}
+    <br>
+    <div class="song-labels">
+        {% if current_user == song.author %}
+        <a href="{{url_for('main.update_song', song_id=song.song_id)}}" class="label label-warning">
+            {{_("Edit")}}
+        </a>
+
+        <a href="{{url_for('main.delete_song', song_id=song.song_id)}}" class="label label-danger">
+            {{_("Delete")}}
+        </a>
+    {% elif current_user.can(Permission.ADMIN) %}
+        <a href="{{url_for('main.update_song', song_id=song.song_id)}}" class="label label-danger">
+            {{_("Edit Admin")}}
+        </a>
+
+        <a href="{{url_for('main.delete_song', song_id=song.song_id)}}" class="label label-danger">
+            {{_("Delete")}}
+        </a>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+        {% if not song.is_liked_by(current_user) %}
+            <a class="label label-success" href="{{url_for('main.like', song_id=song.song_id)}}">&#128077</a>
+        {% else %}
+            <a class="label label-danger" href="{{url_for('main.unlike', song_id=song.song_id)}}">&#128078</a>
+        {% endif %}
+        | 
+    {% endif %}
+    
+    <a class="label label-primary" href="#">{{_("Likes")}} {{song.likes.count()}}</a>
+    </div>
+
+    
+{% endblock %}
+
+{% block comments %}
+<div class="comments">
+    {% if current_user.can(Permission.COMMENT) %}
+        <div class="container">
+            {{wtf.quick_form(form, button_map={"submit": "primary"})}}
+        </div>
+    {% endif %}
+
+    {% if comments[0] %}
+        <h3>{{_("Comments")}}</h3>
+        {% include "_comments.html" %}
+    {% endif %}
+    {% if pagination.items %}
+        {{macros.pagination_widget(pagination, "main.song", song_id=song.song_id, fragment="#comments")}}
+    {% endif %}
+    
+</div>
+    
+{% endblock %}

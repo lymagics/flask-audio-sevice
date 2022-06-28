@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}{{_("Upload song")}}{% endblock %}
+
+
+{% block page_content %}
+<div id="upload-alert" role="alert">
+    <div class="content">
+        <div id="my-loader"></div> <p id="loaderText"></p>
+    </div>
+  </div>
+
+<div class="page-header">
+    <h1>{{_("Upload your song.")}}</h1>
+</div>
+
+<div class="col-md-4">
+    <form action="{{url_for('main.upload_song')}}" class="form form-horizontal" method="post" role="form" enctype="multipart/form-data" id="songForm">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+      
+        {{form.name.label}} {{form.name(class="form-control")}}
+        <br>
+        {{form.song.label}} {{form.song(class="form-control-file", accept="audio/*")}}
+        <br>
+        {{form.lyrics.label}} {{form.lyrics(class="form-control")}}
+        <br>
+        {{form.submit(class="btn btn-primary", id="submitButton")}} 
+        
+      </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script>
+    
+
+    document.getElementById("submitButton").addEventListener("click", function () {
+        let songName = document.forms["songForm"]["name"].value;
+        let file = document.forms["songForm"]["song"].value;
+
+        if(songName && file && songName.length >= 1 && songName.length <=64) {
+            let element = document.getElementById("my-loader");
+            element.classList.add("loader");
+
+            let elementText = document.getElementById("loaderText");
+            elementText.innerHTML = {{gettext("Please wait while your song is uploading.")|tojson|safe}};
+
+            let uploadAlert = document.getElementById("upload-alert");
+            uploadAlert.classList.add("alert", "alert-info");
+        }
+
+        
+    });
+</script>
+{% endblock %}

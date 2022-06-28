@@ -1,0 +1,33 @@
+{% for comment in comments %}
+    <div class="comment">
+        <div class="user-photo">
+            <img src="{{comment.author.gravatar(size=38)}}">
+        </div>
+        <div class="comment-inner">
+            <div class="timestamp">
+                {{moment(comment.timestamp).fromNow()}}
+            </div>
+            <div class="username">
+                <a href="{{url_for('main.user', username=comment.author.username)}}">{{comment.author.username}}</a>
+            </div>
+            
+            <div class="comment-body">
+                {% if not comment.disabled %}
+                    <p>{{comment.body}}</p>
+                {% else %}
+                    <p><i>{{_("Comment is disabled by moderators")}}.</i></p>
+                    {% if MODERATE %}
+                        <p>{{comment.body}}</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% if MODERATE %}
+                {% if not comment.disabled %}
+                    <a class="btn btn-danger btn-xs" href="{{url_for('main.disable_comment', comment_id=comment.comment_id)}}">{{_("Disable")}}</a>
+                {% else %}
+                    <a class="btn btn-default btn-xs" href="{{url_for('main.enable_comment', comment_id=comment.comment_id)}}">{{_("Enable")}}</a>
+                {% endif %} 
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

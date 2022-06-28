@@ -1,0 +1,40 @@
+{% for trio in songs %}
+    <div class="container">
+        <div class="row">
+            {% for song in trio %}
+                <div class="col-md-4">
+                    <h3>{{song.name}}</h3>
+                    <p>{{_("Published by")}} <a href="{{url_for('main.user', username=song.author.username)}}">{{song.author.username}}</a></p>
+                    {% if song.get_url() %}
+                        <audio controls>
+                            <source src="{{song.url}}">
+                        </audio>
+                    {% else %}
+                    <div id="upload-alert" class="alert alert-info" role="alert">
+                        <div class="content">
+                            <div class="loader-small"></div>  <div class="text"><p>{{_("Please wait. This song is uploading to the server.")}}</p></div>
+                        </div>
+                      </div>
+                    {% endif %}
+                    <a href="{{url_for('main.song', song_id=song.song_id)}}" class="label label-primary">
+                        {{_("Song Info")}}
+                    </a>
+                    <div class="comments-count">
+                        {% if current_user.is_authenticated %}
+                            {% if not song.is_liked_by(current_user) %}
+                                <a class="label label-success" href="{{url_for('main.like', song_id=song.song_id)}}">&#128077</a>
+                            {% else %}
+                                <a class="label label-danger" href="{{url_for('main.unlike', song_id=song.song_id)}}">&#128078</a>
+                            {% endif %}
+                            |
+                        {% endif %}
+                        
+                        <a class="label label-primary" href="#">{{_("Likes")}} {{song.likes.count()}}</a>
+                        <a href="{{url_for('main.song', song_id=song.song_id)}}#comments" class="label label-primary">{{_("Comments")}} {{song.comments.count()}}</a>
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

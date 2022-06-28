@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{_("Unconfirmed")}}{% endblock %}
+
+{% block page_content %}
+<div class="page_header">
+    <h1>{{_("Confirm your account")}}.</h1>
+    <p>{{_("Check your email to confirm your account")}}.</p>
+    <p>{{_("If you didn't get your email, click")}} <a href="{{url_for('auth.send_confirm')}}">{{_("here")}}</a> {{_("to resend")}}.</p>
+</div>
+{% endblock %}

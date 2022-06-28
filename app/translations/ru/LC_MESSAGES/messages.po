@@ -1,0 +1,620 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-06-27 21:27+0300\n"
+"PO-Revision-Date: 2022-06-26 19:15+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: app/__init__.py:22
+msgid "You have to login to access this page."
+msgstr "Вы должны войти , чтобы получить доступ к этой странице."
+
+#: app/auth/forms.py:18 app/auth/forms.py:36 app/main/forms.py:38
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: app/auth/forms.py:19 app/auth/forms.py:40
+msgid "Password"
+msgstr "Пароль"
+
+#: app/auth/forms.py:20
+msgid "Keep me logged in."
+msgstr "Оставить меня залогиненным."
+
+#: app/auth/forms.py:21 app/templates/auth/login.html:4
+#: app/templates/auth/login.html:8 app/templates/base.html:41
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: app/auth/forms.py:34 app/auth/forms.py:96 app/main/forms.py:42
+msgid "Email"
+msgstr "Эл. адрес"
+
+#: app/auth/forms.py:38
+msgid ""
+"Usernames must have only letters, numbers,"
+"                                                           dots and "
+"underscores."
+msgstr ""
+"Имя пользователя должно состоять только из букв, цифр,"
+"                                                           точек и нижних"
+" подчеркиваний."
+
+#: app/auth/forms.py:41
+msgid "Password must match."
+msgstr "Пароли должны совпадать."
+
+#: app/auth/forms.py:42 app/auth/forms.py:68 app/auth/forms.py:116
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+#: app/auth/forms.py:43
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: app/auth/forms.py:48
+msgid "Account with such email already registered."
+msgstr "Аккаунт с такой электронной почтой уже зарегистрирован."
+
+#: app/auth/forms.py:53 app/main/forms.py:64
+msgid "Username already in use."
+msgstr "Имя пользователя уже используется."
+
+#: app/auth/forms.py:65
+msgid "Old password"
+msgstr "Старый пароль"
+
+#: app/auth/forms.py:66 app/auth/forms.py:114
+msgid "New Password"
+msgstr ""
+
+#: app/auth/forms.py:67 app/auth/forms.py:115
+msgid "Passwords must match."
+msgstr "Новый пароль"
+
+#: app/auth/forms.py:69 app/templates/auth/change_password.html:4
+#: app/templates/auth/change_password.html:8
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: app/auth/forms.py:79
+msgid "New Email"
+msgstr "Новый email-адрес"
+
+#: app/auth/forms.py:81 app/templates/base.html:50
+msgid "Change Email"
+msgstr "Сменить имейл"
+
+#: app/auth/forms.py:86
+msgid "Email already in use."
+msgstr "Этот электронный адрес уже занят."
+
+#: app/auth/forms.py:98 app/templates/auth/confirm_reset.html:4
+#: app/templates/auth/confirm_reset.html:8 app/templates/auth/reset.html:4
+#: app/templates/auth/reset.html:8
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: app/auth/forms.py:103
+msgid "Account with such email doesn't exist."
+msgstr "Аккаунта с таким адресом электронной почты не существует."
+
+#: app/auth/forms.py:117
+msgid "Reset"
+msgstr "Сбросить"
+
+#: app/auth/forms.py:125
+msgid "Search"
+msgstr "Поиск"
+
+#: app/auth/views.py:45
+msgid "Invalid username or password."
+msgstr "Неправильное имя пользователя или пароль."
+
+#: app/auth/views.py:58
+msgid "You have been logged out."
+msgstr "Вы вышли из системы."
+
+#: app/auth/views.py:80 app/auth/views.py:121
+msgid "An confirmation email with instructions has been sent you."
+msgstr "Вам отправлено письмо с подтверждением и инструкциями."
+
+#: app/auth/views.py:106
+msgid "Your account successfully confirmed! Thanks!"
+msgstr "Ваш аккаунт успешно подтвержден! Спасибо!"
+
+#: app/auth/views.py:139
+msgid "You password has been changed."
+msgstr "Ваш пароль изменен."
+
+#: app/auth/views.py:142
+msgid "Invalid password."
+msgstr "Неверный пароль."
+
+#: app/auth/views.py:160 app/auth/views.py:196
+msgid "An email with instructions has been sent to you."
+msgstr "Вам отправлено письмо с инструкциями."
+
+#: app/auth/views.py:174
+msgid "You email successfully changed."
+msgstr "Ваш адрес электронной почты успешно изменен."
+
+#: app/auth/views.py:176 app/auth/views.py:219
+msgid "Invalid token."
+msgstr "Неверный токен."
+
+#: app/auth/views.py:199
+msgid "Account with this email doesn't exist."
+msgstr "Аккаунт с таким адресом электронной почты не существует."
+
+#: app/auth/views.py:217
+msgid "Password has been changed."
+msgstr "Пароль был изменен."
+
+#: app/main/forms.py:19 app/main/forms.py:46
+msgid "Real Name"
+msgstr "Настоящее имя"
+
+#: app/main/forms.py:20 app/main/forms.py:43
+msgid "About me"
+msgstr "Обо мне"
+
+#: app/main/forms.py:21 app/main/forms.py:45
+msgid "Location"
+msgstr "Расположение"
+
+#: app/main/forms.py:22
+msgid "Save"
+msgstr "Сохранить"
+
+#: app/main/forms.py:40
+msgid ""
+"Usernames must have only"
+"                                                               letters, "
+"numbers, dots and underscores."
+msgstr ""
+"Имена пользователей должны иметь только"
+"                                                               буквы, "
+"цифры, точки и подчеркивания."
+
+#: app/main/forms.py:44
+msgid "Confirmed"
+msgstr "Подтвержденный"
+
+#: app/main/forms.py:47
+msgid "Role"
+msgstr "Роль"
+
+#: app/main/forms.py:48 app/templates/edit_profile_admin.html:4
+#: app/templates/song.html:37 app/templates/update_song.html:4
+#: app/templates/user.html:25
+msgid "Edit"
+msgstr "Изменить"
+
+#: app/main/forms.py:59
+msgid "Account with this email already exists."
+msgstr "Учетная запись с таким адресом электронной почты уже существует."
+
+#: app/main/forms.py:75 app/main/forms.py:93
+msgid "Song name"
+msgstr "Название песни"
+
+#: app/main/forms.py:76
+msgid "Song"
+msgstr "Песня"
+
+#: app/main/forms.py:77 app/main/forms.py:94
+msgid "Lyrics"
+msgstr "Текст песни"
+
+#: app/main/forms.py:78
+msgid "Upload"
+msgstr "Загрузить"
+
+#: app/main/forms.py:83
+msgid "Uncnown file format."
+msgstr "Неизвестный формат файла."
+
+#: app/main/forms.py:95
+msgid "Update"
+msgstr "Обновить"
+
+#: app/main/forms.py:104
+msgid "What do you think on this song?"
+msgstr "Что вы думаете об этой песне?"
+
+#: app/main/forms.py:105
+msgid "Comment"
+msgstr "Оставить комментарий"
+
+#: app/main/views.py:70
+msgid "Your profile successfully updated."
+msgstr "Ваш профиль успешно обновлен."
+
+#: app/main/views.py:99
+msgid "User profile updated."
+msgstr "Профиль пользователя обновлен."
+
+#: app/main/views.py:131
+msgid "Your song has been uploaded!"
+msgstr "Ваша песня загружена!"
+
+#: app/main/views.py:149
+msgid "Your comment successfully added."
+msgstr "Ваш комментарий успешно добавлен."
+
+#: app/main/views.py:179
+msgid "Song has been updated."
+msgstr "Песня обновлена."
+
+#: app/main/views.py:200
+msgid "Song has been deleted."
+msgstr "Песня удалена."
+
+#: app/main/views.py:234
+msgid "Comment has been disabled."
+msgstr "Комментарий отключен."
+
+#: app/main/views.py:250
+msgid "Comment has been enabled."
+msgstr "Комментарий был включен."
+
+#: app/main/views.py:269
+#, python-format
+msgid "You already follow %(username)s."
+msgstr "Вы уже подписаны на %(username)s."
+
+#: app/main/views.py:273
+#, python-format
+msgid "You now following %(username)s."
+msgstr "Вы теперь подписаны на %(username)s."
+
+#: app/main/views.py:292
+#, python-format
+msgid "You don't follow %(username)s."
+msgstr "Вы не подписаны на %(username)s."
+
+#: app/main/views.py:296
+#, python-format
+msgid "You aren't following %(username)s anymore."
+msgstr "Вы больше не подписаны на %(username)s."
+
+#: app/main/views.py:334
+msgid "Followers of"
+msgstr "Подписчики"
+
+#: app/main/views.py:353
+msgid "Followed by"
+msgstr "Подписки"
+
+#: app/main/views.py:370
+#, python-format
+msgid "You liked %(name)s."
+msgstr "Вы лайкнули %(name)s."
+
+#: app/main/views.py:388
+#, python-format
+msgid "You unliked %(name)s."
+msgstr "Вы убрали лайк с песни %(name)s."
+
+#: app/templates/403.html:3 app/templates/403.html:6
+msgid "Forbidden"
+msgstr "Запрещено"
+
+#: app/templates/403.html:7
+msgid "You don't have permission to access this resource"
+msgstr "У вас нет прав доступа к этому ресурсу"
+
+#: app/templates/404.html:3 app/templates/404.html:6
+msgid "Page Not Found"
+msgstr "Страница не найдена"
+
+#: app/templates/404.html:7
+msgid "You found page that doesn't exist"
+msgstr "Вы нашли несуществующую страницу"
+
+#: app/templates/500.html:3 app/templates/500.html:6
+msgid "Internal Server Error"
+msgstr "Внутренняя ошибка сервера"
+
+#: app/templates/500.html:7
+msgid "Sorry. It's not you. It's us."
+msgstr "Простите. Это не вы. Это мы."
+
+#: app/templates/_comments.html:18
+msgid "Comment is disabled by moderators"
+msgstr "Комментарий отключен модераторами"
+
+#: app/templates/_comments.html:26
+msgid "Disable"
+msgstr "Отключить"
+
+#: app/templates/_comments.html:28
+msgid "Enable"
+msgstr "Включить"
+
+#: app/templates/_songs.html:7 app/templates/song.html:11
+msgid "Published by"
+msgstr "Опубликован"
+
+#: app/templates/_songs.html:15 app/templates/song.html:21
+msgid "Please wait. This song is uploading to the server."
+msgstr "Пожалуйста подождите. Эта песня загружается на сервер."
+
+#: app/templates/_songs.html:20
+msgid "Song Info"
+msgstr "Про песню"
+
+#: app/templates/_songs.html:32 app/templates/song.html:61
+msgid "Likes"
+msgstr "Лайки"
+
+#: app/templates/_songs.html:33 app/templates/song.html:76
+msgid "Comments"
+msgstr "Комментарии"
+
+#: app/templates/base.html:15 app/templates/index.html:4
+msgid "Main"
+msgstr "Главная"
+
+#: app/templates/base.html:20
+msgid "Explore"
+msgstr "Исследовать"
+
+#: app/templates/base.html:22 app/templates/user.html:4
+msgid "Profile"
+msgstr "Профиль"
+
+#: app/templates/base.html:35
+msgid "Moderate Comments"
+msgstr "Модерация комментариев"
+
+#: app/templates/base.html:38
+msgid "Upload Song"
+msgstr "Загрузить песню"
+
+#: app/templates/base.html:46
+msgid "Account"
+msgstr "Аккаунт"
+
+#: app/templates/base.html:49
+msgid "Change Password"
+msgstr "Сменить пароль"
+
+#: app/templates/base.html:51
+msgid "Log Out"
+msgstr "Выйти"
+
+#: app/templates/edit_profile.html:4 app/templates/edit_profile.html:8
+msgid "Edit profile"
+msgstr "Изменить профиль"
+
+#: app/templates/edit_profile_admin.html:8
+msgid "Edit profile as Admin"
+msgstr "Изменить профиль от имени администратора"
+
+#: app/templates/follow.html:8
+msgid "User"
+msgstr "Пользователь"
+
+#: app/templates/follow.html:8
+msgid "Since"
+msgstr "С"
+
+#: app/templates/index.html:7
+msgid "Hello,"
+msgstr "Привет,"
+
+#: app/templates/index.html:11
+msgid "Stranger"
+msgstr "Незнакомец"
+
+#: app/templates/index.html:17
+msgid "All"
+msgstr "Все песни"
+
+#: app/templates/index.html:21 app/templates/user.html:40
+msgid "Followed"
+msgstr "Подписки"
+
+#: app/templates/index.html:28
+msgid "Recently published"
+msgstr "Недавно опубликовано"
+
+#: app/templates/moderate_comments.html:4
+#: app/templates/moderate_comments.html:8
+msgid "Moderate comments"
+msgstr "Модерация комментариев"
+
+#: app/templates/search.html:3 app/templates/search.html:7
+msgid "Results of search:"
+msgstr "Результаты поиска:"
+
+#: app/templates/search.html:16
+msgid "Previous results"
+msgstr "Предыдущие результаты"
+
+#: app/templates/search.html:22
+msgid "Next results"
+msgstr "Следующие результаты"
+
+#: app/templates/search.html:28
+msgid "Nothing found."
+msgstr "Ничего не найдено."
+
+#: app/templates/song.html:28
+msgid "Click here for Lyrics"
+msgstr "Нажмите здесь, чтобы найти тексты песен"
+
+#: app/templates/song.html:41 app/templates/song.html:49
+msgid "Delete"
+msgstr "Удалить"
+
+#: app/templates/song.html:45
+msgid "Edit Admin"
+msgstr "Изменить от имени администратора"
+
+#: app/templates/update_song.html:8
+msgid "Edit song."
+msgstr "Редактировать песню."
+
+#: app/templates/upload_song.html:4
+msgid "Upload song"
+msgstr "Загрузить песню"
+
+#: app/templates/upload_song.html:15
+msgid "Upload your song."
+msgstr "Загрузите свою песню."
+
+#: app/templates/upload_song.html:49
+msgid "Please wait while your song is uploading."
+msgstr "Пожалуйста, подождите, пока ваша песня загружается."
+
+#: app/templates/user.html:16
+msgid "From"
+msgstr "Из"
+
+#: app/templates/user.html:21
+msgid "Member since:"
+msgstr "Участник с:"
+
+#: app/templates/user.html:22
+msgid "Last seen:"
+msgstr "Последнее посещение:"
+
+#: app/templates/user.html:28
+msgid "Edit as Admin"
+msgstr "Изменить от имени администратора"
+
+#: app/templates/user.html:34
+msgid "Follow"
+msgstr "Подписаться"
+
+#: app/templates/user.html:36
+msgid "Unfollow"
+msgstr "Отписаться"
+
+#: app/templates/user.html:39
+msgid "Followers"
+msgstr "Подписчики"
+
+#: app/templates/user.html:44
+msgid "Follows you"
+msgstr "Подписан на вас"
+
+#: app/templates/user.html:55
+msgid "Posted by"
+msgstr "Опубликовано"
+
+#: app/templates/auth/change_email.html:4
+#: app/templates/auth/change_email.html:8
+msgid "Change email"
+msgstr "Сменить Эл. адрес"
+
+#: app/templates/auth/login.html:12
+msgid "Don't have an account? Click"
+msgstr "У вас нет аккаунта? Нажмите"
+
+#: app/templates/auth/login.html:12 app/templates/auth/login.html:13
+#: app/templates/auth/mail/change_email.html:3
+#: app/templates/auth/mail/confirm.html:5 app/templates/auth/mail/reset.html:3
+#: app/templates/auth/unconfirmed.html:9
+msgid "here"
+msgstr "здесь"
+
+#: app/templates/auth/login.html:12
+msgid "to create"
+msgstr "чтобы создать"
+
+#: app/templates/auth/login.html:13
+msgid "Forgot your password? Click"
+msgstr "Забыли свой пароль? Нажмите"
+
+#: app/templates/auth/login.html:13
+msgid "to reset"
+msgstr "чтобы сбросить его"
+
+#: app/templates/auth/register.html:4 app/templates/auth/register.html:8
+msgid "Create an account"
+msgstr "Завести аккаунт"
+
+#: app/templates/auth/unconfirmed.html:3
+msgid "Unconfirmed"
+msgstr "Не подтверждено"
+
+#: app/templates/auth/unconfirmed.html:7
+msgid "Confirm your account"
+msgstr "Подтвердите свой аккаунт"
+
+#: app/templates/auth/unconfirmed.html:8
+msgid "Check your email to confirm your account"
+msgstr "Проверьте свою электронную почту, чтобы подтвердить свою учетную запись"
+
+#: app/templates/auth/unconfirmed.html:9
+msgid "If you didn't get your email, click"
+msgstr "Если вы не получили письмо, нажмите"
+
+#: app/templates/auth/unconfirmed.html:9
+msgid "to resend"
+msgstr "чтобы отправить письмо опять"
+
+#: app/templates/auth/mail/change_email.html:1
+#: app/templates/auth/mail/confirm.html:1 app/templates/auth/mail/reset.html:1
+msgid "Dear"
+msgstr "Дорогой"
+
+#: app/templates/auth/mail/change_email.html:3
+msgid "To confirm email change click"
+msgstr "Чтобы подтвердить изменение электронной почты, нажмите"
+
+#: app/templates/auth/mail/change_email.html:5
+msgid "Alternatively, you can paste following url into your browser"
+msgstr "Кроме того, вы можете вставить следующий URL-адрес в свой браузер"
+
+#: app/templates/auth/mail/change_email.html:8
+#: app/templates/auth/mail/confirm.html:10 app/templates/auth/mail/reset.html:8
+msgid "Sincerely"
+msgstr "Искренне"
+
+#: app/templates/auth/mail/change_email.html:10
+#: app/templates/auth/mail/confirm.html:12
+#: app/templates/auth/mail/reset.html:10
+msgid "Site Team"
+msgstr "Команда сайта"
+
+#: app/templates/auth/mail/change_email.html:12
+#: app/templates/auth/mail/confirm.html:14
+#: app/templates/auth/mail/reset.html:12
+msgid "Note: replies to this email address are not monitored."
+msgstr "Примечание: ответы на этот адрес электронной почты не отслеживаются."
+
+#: app/templates/auth/mail/confirm.html:3
+msgid "Thank you for registration on our platform"
+msgstr "Спасибо за регистрацию на нашей платформе"
+
+#: app/templates/auth/mail/confirm.html:5
+msgid "To confirm your account please click"
+msgstr "Чтобы подтвердить свою учетную запись, нажмите"
+
+#: app/templates/auth/mail/confirm.html:7 app/templates/auth/mail/reset.html:5
+msgid "Alternatively, you can paste following link into your browser"
+msgstr "Кроме того, вы можете вставить следующую ссылку в свой браузер"
+
+#: app/templates/auth/mail/reset.html:3
+msgid "To reset your password click"
+msgstr "Чтобы сбросить пароль, нажмите"
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}{{_("Moderate comments")}}{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>{{_("Moderate comments")}}.</h1>
+</div>
+{% set MODERATE = True %}
+{% include "_comments.html" %}
+
+{% if pagination.items %}
+    {{macros.pagination_widget(pagination, "main.moderate_comments")}}
+{% endif %}
+{% endblock %}

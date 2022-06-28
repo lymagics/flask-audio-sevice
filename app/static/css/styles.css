@@ -1,0 +1,87 @@
+body {
+    background-color: lightgreen;
+}
+
+div.profile-img {
+    margin-top: 20px;
+    float: right;
+}
+
+div.pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+div.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0f67be;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+div.loader-small {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0f67be;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+div.content {
+    display: flex;
+}
+
+div.content p {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+div.user-songs {
+    margin-top: 320px;
+}
+
+div.comments {
+    margin-top: 20px;
+}
+
+div.comment-inner {
+    margin-top: 10px;
+    margin-left: 50px;
+    display: block;
+}
+
+div.timestamp {
+    float: right;
+}
+
+div.user-photo {
+    position: absolute;
+}
+
+div.comments-count {
+    float: right;
+    margin-right: 60px;
+}
+
+div.song-labels a {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+div.text p{
+    font-size: 10;
+
+}

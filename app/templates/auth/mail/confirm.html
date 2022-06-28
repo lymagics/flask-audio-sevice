@@ -1,0 +1,14 @@
+<h1>{{_("Dear")}}, {{user.username}}</h1>
+
+<p>{{_("Thank you for registration on our platform")}}!</p>
+
+<p>{{_("To confirm your account please click")}} <a href="{{url_for('auth.confirm', token=token, _external=True)}}">{{_("here")}}</a>.</p>
+
+<p>{{_("Alternatively, you can paste following link into your browser")}}:</p>
+<p>{{url_for('auth.confirm', token=token, _external=True)}}</p>
+
+<p>{{_("Sincerely")}}, </p>
+    
+<p>{{_("Site Team")}}.</p>
+
+{{_("Note: replies to this email address are not monitored.")}}

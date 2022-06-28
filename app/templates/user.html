@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}{{user.username}} - {{_("Profile")}}{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="profile-img">
+            <img src="{{user.gravatar(size=256)}}">
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h2>{{user.username}}</h2>
+        {% if user.name %}<p>{{user.name}}</p>{% endif %}
+        {% if user.location %}<p>{{_("From")}} <a href="http://maps.google.com/?q={{ user.location }}">{{user.location}}</a></p>{% endif %}
+        {% if user.about_me %}<p>{{user.about_me}}</p>{% endif %}
+        {% if current_user.is_administrator() %}<p><a href="mailto:{{user.email}}">{{user.email}}</a></p>{% endif %}
+
+        <br>
+        <p>{{_("Member since:")}} {{moment(user.member_since).format('L')}}</p>
+        <p>{{_("Last seen:")}} {{moment(user.last_seen).fromNow()}}</p>
+        <br>
+        {% if current_user == user %}
+           <a class="btn btn-default btn-xs" href="{{url_for('main.edit_profile')}}">{{_("Edit")}}</a>
+        {% endif %}
+        {% if current_user.is_administrator() %}
+            <a class="btn btn-danger btn-xs" href="{{url_for('main.edit_profile_admin', user_id=user.user_id)}}">{{_("Edit as Admin")}}</a>
+        {% endif %}
+
+        
+        {% if current_user.can(Permission.FOLLOW) and current_user != user%}
+            {% if not current_user.is_following(user) %}
+                <a class="btn btn-primary btn-xs" href="{{url_for('main.follow', username=user.username)}}">{{_("Follow")}}</a>
+            {% else %}
+                <a class="btn btn-default btn-xs" href="{{url_for('main.unfollow', username=user.username)}}">{{_("Unfollow")}}</a>
+            {% endif %}
+        {% endif %}
+        <a class="label label-primary" href="{{url_for('main.followers', username=user.username)}}">{{_("Followers")}} {{user.followers.count()-1}}</a>
+        <a class="label label-primary" href="{{url_for('main.followed_by', username=user.username)}}">{{_("Followed")}} {{user.followed.count()-1}}</a>
+
+        {% if current_user.can(Permission.FOLLOW) and current_user != user%}
+            {% if current_user.is_followed_by(user) %}
+                | <a class="label label-default" href="#">{{_("Follows you")}}</a>
+            {% endif %}
+        {% endif %}
+
+        
+    </div>
+
+        
+    {% if songs[0] %}
+        <div class="user-songs">
+            <div class="container">
+                <h2>{{_("Posted by")}} {{user.username}}</h2>
+                {% include "_songs.html" %}
+                {{macros.pagination_widget(pagination, "main.user", username=user.username)}}
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

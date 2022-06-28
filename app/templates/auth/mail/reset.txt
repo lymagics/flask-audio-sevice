@@ -1,0 +1,10 @@
+{{_("Dear")}}, {{user.username}}
+
+{{_("To reset your password click on the following link:")}}
+{{url_for('auth.confirm_reset', token=token, _external=True)}}
+
+{{_("Sincerely")}}, 
+
+{{_("Site Team")}}.
+
+{{_("Note: replies to this email address are not monitored.")}}

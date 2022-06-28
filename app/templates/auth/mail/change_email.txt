@@ -1,0 +1,10 @@
+{{_("Dear")}}, {{user.username}}
+
+{{_("To change your email, click on the following link")}}:
+{{url_for('auth.confirm_change_email', token=token, _external=True)}}
+
+{{_("Sincerely")}}, 
+
+{{_("Site Team")}}.
+
+{{_("Note: replies to this email address are not monitored.")}}
